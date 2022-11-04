@@ -30,11 +30,12 @@ export default class ReviewController{
             const date = new Date()
 
             const reviewResponse = await ReviewDAO.updateReview(
-                reviewID,
+                reviewId,
                 req.body.user_id,
                 text,
                 date,
             )
+            res.json({status: "success"})
 
             var {error} = reviewResponse
             if(error) {
