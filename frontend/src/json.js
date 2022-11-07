@@ -7,30 +7,37 @@ var product = [{
     "image": "https://t3.ftcdn.net/jpg/04/34/72/82/240_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg"
 }, {
     "id": 1,
-    "title": "McRib",
+    "title": "Qifutan Phone Mount",
     "price": "4.59",
-    "description": "The McRib is a barbecue-flavored pork sandwich periodically sold by the international fast food restaurant chain McDonald's. It was first introduced to the McDonald's menu in 1981, following test marketing the year before.",
-    "brand": "McDonalds",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/McD-McRib.jpg/1200px-McD-McRib.jpg"
+    "description": "Upgraded Vent Clip: The Car phone mount features a stronger, thinner vent clip and an innovative support ring for extra support, which could hold your phone securely on an air vent in your car.",
+    "brand": "Qifutan",
+    "image": "https://m.media-amazon.com/images/I/71slV0D1MML._AC_SL1500_.jpg"
 }, {
     "id": 2,
-    "title": "Cinnabon Delights, 2 pack",
-    "price": "1.89",
-    "description": "Cinnabon Delights are a dessert and a breakfast item served at Taco Bell. They are round pieces of bread covered with sugar and have an icing center. They come in a 2-pack, a 4-pack and a 12-pack.",
-    "brand": "TacoBell",
-    "image": "https://www.tacobell.com/images/30046_cinnabon_delights_2_pack_269x269.jpg"
+    "title": "Book Ends",
+    "price": "9.49",
+    "description": "Sturdy&Durable: Bookends are made of heavy-duty steel so that the bookend has a sturdy shape and is not easy to bend. L-shape design enhances the structural stability of the book ends. Anti-static spray paint makes the metal bookends more durable.",
+    "brand": "Umikk",
+    "image": "https://m.media-amazon.com/images/I/710Sf9koKUL._AC_UL320_.jpg"
 }, {
     "id": 3,
-    "title": "Baja Blast",
-    "price": "2.29",
-    "description": "Mountain Dew Baja Blast is a tropical lime-flavored soft drink under the Mountain Dew brand, exclusively distributed at Taco Bell restaurants. Since the original flavor's launch in 2004, the Baja Blast brand has since expanded to include new flavors, alcoholic beverages, and energy drinks, as well as merchandise, such as flavored lip balm, room sprays, and Halloween costumes.",
-    "brand": "TacoBell",
-    "image": "https://www.tacobell.com/images/1027_mountain_dew_baja_blast_269x269.jpg"
+    "title": "Backrest Lounger Pillow",
+    "price": "16.27",
+    "description": "Relax in comfort with this soft, brushed micro mink fabric Backrest Lounger pillow. The high backed wall of this pillow gives extra support for your neck, upper and lower back. Additionally, the double sided arms give added support to your arms and shoulders. This Backrest Pillow is perfect for reading in bed, lounging on the floor or playing video games. With the added carrying handle, it is easy to move this back rest pillow from room to room.",
+    "brand": "Mainstays",
+    "image": "https://i5.walmartimages.com/asr/7d7b53c7-d42e-421b-92d6-e2927496e81e_1.30d444181a657ad5b560406dcf54a1e3.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
 }, {
     "id": 4,
-    "title": "McChicken + McDouble",
-    "price": "4.78",
-    "description": "The McGangBang, also called the Bababooey Burger is a very popular, if not the most popular, Secret Menu item McDonald's has to offer. The absurd and grotesque title gives a look into the nature of the burger. The McGangbang originally started by putting a McChicken (Or Junior Chicken in Canada) in between a Double Cheeseburger or McDouble. It was a way to get more \"bang\" for your buck when ordering from the Value Menu. The modern variation of the McGangBang is made out of a McSausage (or McShmeaty), but instead of placing it between a McDouble or Double Cheese, it's placed between a Big Mac and the Big Mac's middle bun is removed to create the McGangBang.",
-    "brand": "McDonalds",
-    "image": "http://hackthemenu.com/wp-content/uploads/2015/11/mcdonalds-mcgangbang-1032px.jpg"
+    "title": "Cabana Stripe",
+    "price": "23.00",
+    "description": "2 large beach towels offer optimal coverage, exceptional absorbency, and noticeable fluffiness on both sides",
+    "brand": "Amazon Basics",
+    "image": "https://m.media-amazon.com/images/I/71pTOKSfSHL.jpg"
+}, {
+    "id": 5,
+    "title": "Kempf Natural Coco Doormat",
+    "price": "29.95",
+    "description": "NATURAL DURABLE MATERIAL: 100% coconut fiber doormat; 18 Inch x 30 Inch helps to keep unnecessary mud and dirt away from the floor of the room and house",
+    "brand": "Kempf",
+    "image": "https://m.media-amazon.com/images/I/81z6x3SZEpL.jpg"
 }]
