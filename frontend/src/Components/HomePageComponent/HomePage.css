@@ -1,0 +1,22 @@
+.homepage {    
+    margin-top: 105px;
+    display: flex;
+    justify-content: center;
+}
+
+.homepage p {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.icon {
+    height: 30px;
+    width: 50px;
+    border-color: black;
+    display: grid;
+    place-items: center;
+}
+
+.icon svg {
+    font-size: 32px;
+}
