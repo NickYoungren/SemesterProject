@@ -1,40 +1,37 @@
-import RestaurantsDAO from "../dao/restaurantsDAO.js"
+import ProductsDAO from "../dao/restaurantsDAO.js"
 
-export default class RestaurantsController {
-    static async apiGetRestaurants(req, res, next){
-        const restaurantsPerPage = req.query.restaurantsPerPage ? parseInt(req.query.restaurantsPerPage, 10) : 20
+export default class ProductsController {
+    static async apiGetProducts(req, res, next){
+        const productsPerPage = req.query.productsPerPage ? parseInt(req.query.productsPerPage, 10) : 10
         const page = req.query.page ? parseInt(req.query.page, 10) : 0
 
         let filters = {}
-        if (req.query.cuisine) {
-            filters.cuisine = req.query.cuisine
+        if (req.query.Brand) {
+            filters.Brand = req.query.Brand
         }
-        else if (req.query.zipcode){
-            filters.zipcode = req.query.zipcode
-        }
-        else if (req.query.name){
-            filters.name = req.query.name
+        else if (req.query.Name){
+            filters.Name = req.query.Name
         }
 
-        const{restaurantsList, totalNumRestaurants} = await RestaurantsDAO.getRestaurants({
+        const{productsList, totalNumProducts} = await ProductsDAO.getProducts({
             filters,
             page,
-            restaurantsPerPage,
+            productsPerPage,
         })
 
         let response = {
-            restaurants: restaurantsList,
+            products: productsList,
             page: page,
             filters: filters,
-            entries_per_page: restaurantsPerPage,
-            total_results: totalNumRestaurants,
+            entries_per_page: productsPerPage,
+            total_results: totalNumProducts,
         }
         res.json(response)
     }
     static async apiGetRestaurantById(req, res, next){
         try{
             let id = req.params.id || {}
-            let restaurant = await RestaurantsDAO.apiGetRestaurantById(id)
+            let restaurant = await ProductsDAO.apiGetRestaurantById(id)
             if(!restaurant){
                 res.status(404).json({error: "Not found"})
                 return
@@ -48,7 +45,7 @@ export default class RestaurantsController {
     }
     static async apiGetRestaurantCuisines(req, res, next){
         try{
-            let cuisines = await RestaurantsDAO.getCuisines()
+            let cuisines = await ProductsDAO.getCuisines()
             res.json(cuisines)
         }
         catch(e){

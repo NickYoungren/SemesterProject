@@ -1,59 +1,56 @@
 import { ObjectId } from "mongodb"
 
-let restaurants
+let products
 
-export default class RestaurantsDAO {
+export default class ProductsDAO {
     static async injectDB(conn) {
-        if (restaurants) {
+        if (products) {
             return
         }
         try {
-            restaurants = await conn.db(process.env.RESTREVIEWS_NS).collection("restaurants")
+            products = await conn.db(process.env.PRODUCTS_NS).collection("product_info")
         } 
         catch(e) {
-            console.error(`Unable to establish a collection handle in restautantsDAO: ${e}`)
+            console.error(`Unable to establish a collection handle in productsDAO: ${e}`)
         }
     }
 
-    static async getRestaurants({
+    static async getProducts({
         filters = null,
         page = 0,
-        restaurantsPerPage = 20,
+        productsPerPage = 10,
     } = {}) {
         let query
         if (filters){
-            if("name" in filters){
-                query = {$text: {$search: filters["name"]}}
+            if("Name" in filters){
+                query = {$text: {$search: filters["Name"]}}
             }
-            else if("cuisine" in filters) {
-                query = {"cuisine": {$eq: filters["cuisine"]}}
-            }
-            else if("zipcode" in filters) {
-                query = {"address.zipcode": {$eq: filters["zipcode"]}}
+            else if("Brand" in filters) {
+                query = {"Brand": {$eq: filters["Brand"]}}
             }
         }
 
         let cursor
 
         try{
-            cursor = await restaurants
+            cursor = await products
                 .find(query)
         }
         catch(e){
             console.error(`Unable to issue find command, ${e}`)
-            return { restaurantsList: [], totalNumRestaurants: 0}
+            return { productsList: [], totalNumProducts: 0}
         }
 
-        const displayCursor = cursor.limit(restaurantsPerPage).skip(restaurantsPerPage * page)
+        const displayCursor = cursor.limit(productsPerPage).skip(productsPerPage * page)
 
         try {
-            const restaurantsList = await displayCursor.toArray()
-            const totalNumRestaurants = await restaurants.countDocuments(query)
-            return { restaurantsList, totalNumRestaurants}
+            const productsList = await displayCursor.toArray()
+            const totalNumProducts = await products.countDocuments(query)
+            return { productsList, totalNumProducts}
         }
         catch (e) {
             console.error(`Unable to convert cursor to array or problem counting documents, ${e}`)
-            return { restaurantsList: [], totalNumRestaurants: 0}
+            return { productsList: [], totalNumProducts: 0}
         }
     }
     static async getRestaurantById(id){
