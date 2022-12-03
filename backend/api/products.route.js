@@ -4,6 +4,7 @@ import ReviewsCtrl from "./review.controller.js"
 
 const router = express.Router()
 
+
 router.route("/").get(ProductsCtrl.apiGetProducts) //done converting
 router.route("/id/:id").get(ProductsCtrl.apiGetRestaurantById)
 router.route("/brands").get(ProductsCtrl.apiGetProductBrands)
