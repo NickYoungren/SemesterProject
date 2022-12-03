@@ -5,14 +5,26 @@
     margin: 0;
 }
 
+html {
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    color: #fff;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgba(30, 143, 255, 0.616);
+}
+
 /* Style App.js wrapper */
 .App {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* Tabs Container */
@@ -51,9 +63,8 @@ ul.nav li {
     text-align: center;
     cursor: pointer;
     transition: all 0.7s;
-    border-bottom-left-radius: 2rem;
-    border-top-left-radius: 2rem;
 }
+
 ul.nav li:first-child {
     border-bottom-left-radius: 2rem;
     border-top-left-radius: 2rem;
