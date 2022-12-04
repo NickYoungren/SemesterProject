@@ -7,11 +7,11 @@ const ProductCard = ({
     removeFromCompare,
     selected
 }) => (
-    <Item key={product.name}>
-        <Item.Image size="small" src={product.image} />
+    <Item key={product.Name}>
+        <Item.Image size="small" src={product.Image} />
         <Item.Content verticalAlign="middle">
-            <Item.Header style={{color: "white"}}>{product.name}</Item.Header>
-            <Item.Description style={{color: "white"}}>{product.price}</Item.Description>
+            <Item.Header style={{color: "white"}}>{product.Name}</Item.Header>
+            <Item.Description style={{color: "white"}}>{product.Price}</Item.Description>
             <Item.Extra>
                 {selected && selected.includes(product) ? (
                     <Button color="red" onClick={() => removeFromCompare(product)}>

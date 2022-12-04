@@ -1,8 +1,8 @@
 import React from "react";
 import Tabs from "./Components/TabComponent/Tabs";
-import {Switch, Route, Link } from "react-router-dom"
-import "./App.css"
-import "bootstrap/dist/css/bootstrap.min.css"
+import {Switch, Route, Link } from "react-router-dom";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomePage from "./Components/HomePageComponent/HomePage";
 import ProductList from "./Components/ProductListComponent/ProductList"
@@ -22,7 +22,8 @@ function App() {
   }
   return (
     <div className="App">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <Tabs />
+      {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a href="/products" className="navbar-brand">
           GreenConscious
         </a>
@@ -57,7 +58,7 @@ function App() {
             )}
           />
         </Switch>
-      </div>
+      </div> */}
     </div>
   );
 }
