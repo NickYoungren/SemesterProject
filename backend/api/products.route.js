@@ -1,12 +1,13 @@
 import express from "express"
-import RestaurantsCtrl from "./restaurants.controller.js"
+import ProductsCtrl from "./products.controller.js"
 import ReviewsCtrl from "./review.controller.js"
 
 const router = express.Router()
 
-router.route("/").get(RestaurantsCtrl.apiGetRestaurants)
-router.route("/id/:id").get(RestaurantsCtrl.apiGetRestaurantById)
-router.route("/cuisines").get(RestaurantsCtrl.apiGetRestaurantCuisines)
+
+router.route("/").get(ProductsCtrl.apiGetProducts) //done converting
+router.route("/id/:id").get(ProductsCtrl.apiGetRestaurantById)
+router.route("/brands").get(ProductsCtrl.apiGetProductBrands)
 
 router
     .route("/review")
