@@ -13,7 +13,7 @@ const ProductComparison = ({ products }) => {
 
     const removeFromCompare = (item) => {
         const filteredItems = selectedItems.filter(
-            product => product.id !== item.id
+            product => product._id !== item._id
         );
         setSelectedItems(filteredItems)
     };
@@ -27,7 +27,7 @@ const ProductComparison = ({ products }) => {
                         <Table.HeaderCell></Table.HeaderCell>
                         {selectedItems.map((el) => (
                             <Table.HeaderCell 
-                            key={el.id}>{el.name}</Table.HeaderCell>
+                            key={el._id}>{el.Name}</Table.HeaderCell>
                         ))}
                     </Table.Row>
                 </Table.Header>
@@ -40,7 +40,7 @@ const ProductComparison = ({ products }) => {
                             </Label>
                         </Table.Cell>
                         {selectedItems.map((el) => (
-                            <Table.Cell key={el.id}>{el.price}</Table.Cell>
+                            <Table.Cell key={el._id}>{el.Price}</Table.Cell>
                         ))}
                     </Table.Row>
                     <Table.Row>
@@ -50,7 +50,7 @@ const ProductComparison = ({ products }) => {
                             </Label>
                         </Table.Cell>
                         {selectedItems.map((el) => (
-                            <Table.Cell key={el.id}>{el.description}</Table.Cell>
+                            <Table.Cell key={el._id}>{el.Description}</Table.Cell>
                         ))}
                     </Table.Row>
                     <Table.Row>
@@ -60,7 +60,7 @@ const ProductComparison = ({ products }) => {
                             </Label>
                         </Table.Cell>
                         {selectedItems.map((el) =>(
-                            <Table.Cell key={el.id}>{el.brand}</Table.Cell>
+                            <Table.Cell key={el._id}>{el.Brand}</Table.Cell>
                         ))}
                     </Table.Row>
                 </Table.Body>
@@ -70,7 +70,7 @@ const ProductComparison = ({ products }) => {
             <Item.Group>
                 {products.map((product) => (
                     <ProductCard
-                     key={product.id}
+                     key={product._id}
                      product={product}
                      selected={selectedItems}
                      addToCompare={addToCompare}
