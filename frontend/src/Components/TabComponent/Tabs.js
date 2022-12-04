@@ -5,17 +5,13 @@ import ProductComparison from "../CompareComponent/Comparison";
 import SearchBar from "../SearchBarComponent/SearchBar";
 import HomePage from "../HomePageComponent/HomePage";
 import { products } from "../../data/data";
-<<<<<<< HEAD
 import ProductList from "../ProductListComponent/ProductList";
-=======
->>>>>>> a28e4d7b322bba1c2b0110286e1442b4961bdf67
 import ProductDataService from "../../services/products";
 import Login from "../LoginComponent/Login";
 
 const Tabs = () => {
     const [activeTab, setActiveTab] = useState("tab1");
     const [product, setProducts] = useState([]);
-<<<<<<< HEAD
 
     useEffect(() => {
         retrieveProducts();
@@ -33,25 +29,6 @@ const Tabs = () => {
             });
     };
 
-=======
-
-    useEffect(() => {
-        retrieveProducts();
-    }, []);
-
-    const retrieveProducts = () => {
-        ProductDataService.getAll()
-            .then(response => {
-                console.log(response.data.products);
-                const product = (response.data.products);
-                setProducts(product);
-            })
-            .catch(e => {
-                console.log(e);
-            });
-    };
-
->>>>>>> a28e4d7b322bba1c2b0110286e1442b4961bdf67
     
     return (
         <div className="Tabs">
