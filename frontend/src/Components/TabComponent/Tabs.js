@@ -47,7 +47,7 @@ const Tabs = () => {
                     <ProductComparison products={product} />
                 </TabContent>
                 <TabContent id="tab3" activeTab={activeTab}>
-                    <SearchBar placeholder="Enter an item" data={products}/>
+                    <SearchBar placeholder="Enter an item" data={product}/>
                 </TabContent>
                 <TabContent id="tab4" activeTab={activeTab}>
                     <Login />
