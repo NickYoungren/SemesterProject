@@ -47,25 +47,12 @@ const Tabs = () => {
                     <ProductComparison products={product} />
                 </TabContent>
                 <TabContent id="tab3" activeTab={activeTab}>
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <SearchBar placeholder="Enter an item" data={products}/>
-=======
-                    <SearchBar placeholder="Enter a item" data={product}/>
->>>>>>> a28e4d7b322bba1c2b0110286e1442b4961bdf67
                 </TabContent>
                 <TabContent id="tab4" activeTab={activeTab}>
-                    <Login/>
-=======
-                    <SearchBar placeholder="Enter a item" data={product}/>
->>>>>>> master
+                    <Login />
                 </TabContent>
-<<<<<<< HEAD
-                <TabContent id="tab4" activeTab={activeTab}>
-                    <Login/>
-                </TabContent>
-=======
->>>>>>> a28e4d7b322bba1c2b0110286e1442b4961bdf67
+                
 
             </div>
         </div>
