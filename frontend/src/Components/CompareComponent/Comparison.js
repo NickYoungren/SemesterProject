@@ -8,7 +8,11 @@ const ProductComparison = ({ products }) => {
 
 
     const addToCompare = (item) => {
-        setSelectedItems((selectedItems) => [...selectedItems, item])
+        if(selectedItems.length > 2){
+            alert("Only three products are allowed!")
+        } else {
+            setSelectedItems((selectedItems) => [...selectedItems, item])
+        }
     };
 
     const removeFromCompare = (item) => {

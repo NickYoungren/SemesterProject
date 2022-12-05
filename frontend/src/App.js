@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEf } from "react";
 import Tabs from "./Components/TabComponent/Tabs";
 import "./App.css";
 
