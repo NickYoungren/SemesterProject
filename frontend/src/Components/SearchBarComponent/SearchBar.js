@@ -9,7 +9,8 @@ function SearchBar({ placeholder, data }) {
 
 
   const handleFilter = (event) => {
-    var pattern = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/);
+    var specialChar = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/);
+    var digit = new RegExp(/^\d+$/);
 
     const searchWord = event.target.value;
     setWordEntered(searchWord);
@@ -24,11 +25,15 @@ function SearchBar({ placeholder, data }) {
       alert("Enter a product less than 30 characters")
     }
 
-    if(pattern.test(searchWord)){
+    if(specialChar.test(searchWord)){
       setWordEntered([""])
       alert("Special characters are not allowed")
     }
 
+    if(digit.test(searchWord)){
+      setWordEntered([""])
+      alert("Numbers are not allowed")
+    }
     
     if (searchWord === "") {
       setFilteredData([])
