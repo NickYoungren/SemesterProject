@@ -4,8 +4,6 @@ import TabContent from "../V2/TabContent";
 import ProductComparison from "../CompareComponent/Comparison";
 import SearchBar from "../SearchBarComponent/SearchBar";
 import HomePage from "../HomePageComponent/HomePage";
-import { products } from "../../data/data";
-import ProductList from "../ProductListComponent/ProductList";
 import ProductDataService from "../../services/products";
 import Login from "../LoginComponent/Login";
 
@@ -47,7 +45,7 @@ const Tabs = () => {
                     <ProductComparison products={product} />
                 </TabContent>
                 <TabContent id="tab3" activeTab={activeTab}>
-                    <SearchBar placeholder="Enter an item" data={products}/>
+                    <SearchBar placeholder="Enter an item" data={product}/>
                 </TabContent>
                 <TabContent id="tab4" activeTab={activeTab}>
                     <Login />
