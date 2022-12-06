@@ -9,8 +9,8 @@ function SearchBar({ placeholder, data }) {
 
 
   const handleFilter = (event) => {
-    var specialChar = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/);
-    var digit = new RegExp(/^\d+$/);
+    let specialChar = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/);
+    let digit = new RegExp(/^\d+$/);
 
     const searchWord = event.target.value;
     setWordEntered(searchWord);
