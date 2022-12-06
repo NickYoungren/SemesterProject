@@ -8,6 +8,6 @@ app.use(cors())
 app.use(express.json())
 
 app.use("/api/v1/products", products)
-app.use("*", (req, res) => res.status(404).json({error: "not found"}))
+app.use("*", (req, res) => res.status(404).json({error: "not found"}))      //handles all other non-conforming URLs
 
 export default app
