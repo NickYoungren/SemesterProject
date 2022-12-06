@@ -1,6 +1,8 @@
 import React from 'react';
 import { useRef, useState, useEffect} from 'react';
 import "./Login.css";
+import ProductDataService from "../../services/products";
+
 
 const Login = () => {
     const userRef = useRef();
@@ -10,18 +12,34 @@ const Login = () => {
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
+    const [email, setEmail] = useState('');
 
     useEffect(() => {
         userRef.current.focus();
     }, [])
-
+    
     useEffect(() => {
         setErrMsg('');
     }, [user, pwd])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(user, pwd);
+        const info = JSON.stringify({ 
+            name: user,
+            email: email,
+            password: pwd,
+            password_confirmation: pwd
+        });
+        ProductDataService.postSignup(info)
+            .then(response => {
+                console.log("no err");
+                console.log(response.data);
+            })
+            .catch(e => {
+                console.log(e);
+                
+            });
+        setEmail('');
         setUser('');
         setPwd('');
         setSuccess(true);
@@ -31,7 +49,7 @@ const Login = () => {
     <>
         {success ? (
             <section>
-                <h1>You are logged in!</h1>
+                <h1>Your account has been created!</h1>
                 <br />
                 <p>
                     
@@ -41,8 +59,19 @@ const Login = () => {
     <section>
       <p ref={errRef} className={errMsg ? "errmsg" :
       "offscreen"} aria-live="assertive">{errMsg}</p>
-      <h1>Sign In</h1>
+      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
+        <label htmlFor="email">Email:</label>
+        <input 
+            type="text" 
+            id="email"
+            ref={userRef}
+            autoComplete="off"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            required
+        />
+
         <label htmlFor="username">Username:</label>
         <input 
             type="text" 
@@ -53,7 +82,7 @@ const Login = () => {
             value={user}
             required
         />
-        
+
         <label htmlFor="password">Password:</label>
         <input 
             type="password" 
@@ -63,15 +92,9 @@ const Login = () => {
             value={pwd}
             required
         />
-        <button>Sign In</button>
+        <button>Sign Up</button>
       </form>
-      <p>
-            Need an Account?<br />
-            <span className="line">
-                {/*put router link here*/}
-                <a href="#">Sign Up</a>
-            </span>
-      </p>
+      
     </section>
         )}
         </>
