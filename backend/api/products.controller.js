@@ -28,21 +28,6 @@ export default class ProductsController {
         }
         res.json(response)
     }
-    static async apiGetRestaurantById(req, res, next){
-        try{
-            let id = req.params.id || {}
-            let restaurant = await ProductsDAO.apiGetRestaurantById(id)
-            if(!restaurant){
-                res.status(404).json({error: "Not found"})
-                return
-            }
-            res.json(restaurant)
-        }
-        catch(e){
-            console.log(`api, ${e}`)
-            res.status(500).json({error: e})
-        }
-    }
     static async apiGetProductBrands(req, res, next){
         try{
             let brands = await ProductsDAO.getBrands()
